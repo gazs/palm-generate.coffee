@@ -1,0 +1,9 @@
+{
+	"id": "$app.id",
+	"version": "$app.version",
+	"vendor": "$app.vendor",
+	"type": "$app.type",
+	"main": "$app.main",
+	"title": "$app.title",
+	"icon": "$app.icon"
+}

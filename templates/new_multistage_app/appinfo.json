@@ -1,0 +1,10 @@
+{
+	"id": "com.yourdomain.multi",
+	"version": "1.0.0",
+	"vendor": "My Company",
+	"type": "web",
+	"noWindow": true,
+	"main": "index.html",
+	"title": "multi",
+	"icon": "icon.png"
+}

@@ -1,0 +1,3 @@
+To watch and compile every coffeescript file:
+
+coffee -w -o . -c .

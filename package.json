@@ -1,0 +1,7 @@
+{ "name": "palm-generate.coffee"
+, "version": "0.0.1"
+, "dependencies":
+  { "coffee-script": "1.x"
+  , "cli": "0.2.8"
+  , "wrench": "0.1.0"}
+}
