@@ -1,17 +1,18 @@
 cli = require 'cli'
+[path, fs] = [cli.native.path, cli.native.fs]
 
 exports.setup = ->
   if directory_exists(app_dir) and not options.overwrite
     cli.fatal "directory exists"
 
   wrench = require 'wrench'
-  source = "./templates/#{options.template}"
+  source = path.join(mypath, "./templates/#{options.template}")
   destination = "#{process.cwd()}/#{app_dir}"
   wrench.copyDirSyncRecursive(source,destination)
   # delete setup.coffee from destination
-  cli.native.fs.unlinkSync("#{destination}/setup.coffee")
+  fs.unlinkSync("#{destination}/setup.coffee")
 
   # set appinfo.json
-  cli.native.fs.writeFile "#{destination}/appinfo.json", JSON.stringify(appinfo), (err) ->
+  fs.writeFile "#{destination}/appinfo.json", JSON.stringify(appinfo), (err) ->
     cli.error(err) if err
 

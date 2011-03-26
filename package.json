@@ -1,7 +1,17 @@
-{ "name": "palm-generate.coffee"
-, "version": "0.0.1"
-, "dependencies":
-  { "coffee-script": "1.x"
-  , "cli": "0.2.8"
-  , "wrench": "0.1.0"}
+{
+  "name": "palm-generate.coffee",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": "1.x",
+    "cli": "0.2.8",
+    "wrench": "0.1.0"
+  },
+  "bin": {
+    "palm-generate.coffee": "./palm-generate.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gazs/palm-generate.coffee.git"
+  }
+
 }
