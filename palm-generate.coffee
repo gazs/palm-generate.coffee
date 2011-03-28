@@ -31,11 +31,7 @@ if options.list
 
 options.property ?= "{}"
 
-try
-  global.properties = JSON.parse(options.property)
-catch e
-  kvpairs = options.property.split("&")
-  global.properties[key] = value for key, value in kvpairs.split("=")
+global.properties = JSON.parse(options.property)
 
 global.appinfo =
   id: properties.id || "com.yourdomain.#{app_dir}"
