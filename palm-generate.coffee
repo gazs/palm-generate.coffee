@@ -30,7 +30,13 @@ if options.list
   process.exit()
 
 options.property ?= "{}"
-global.properties = JSON.parse(options.property)
+
+try
+  global.properties = JSON.parse(options.property)
+catch e
+  kvpairs = options.property.split("&")
+  global.properties[key] = value for key, value in kvpairs.split("=")
+
 global.appinfo =
   id: properties.id || "com.yourdomain.#{app_dir}"
   version: properties.version || "1.0.0"
@@ -39,6 +45,8 @@ global.appinfo =
   main: properties.main || "index.html"
   title: properties.title || cli.args[0]
   icon: properties.icon || "icon.png"
+
+options.template ?= "new_app"
 
 if options.template and cli.args.length
   if options.template in get_templates()
