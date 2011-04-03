@@ -42,7 +42,9 @@ global.appinfo =
   title: properties.title || cli.args[0]
   icon: properties.icon || "icon.png"
 
-options.template ?= "new_app"
+
+if !options.template and cli.args.length
+  options.template = "new_app"
 
 if options.template and cli.args.length
   if options.template in get_templates()
